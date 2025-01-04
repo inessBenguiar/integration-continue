@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Matrix" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-01-04T04:54:51" hostname="DESKTOP-9EVPGCD" time="0.556">
+<testsuite name="Matrix" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-01-04T06:19:51" hostname="DESKTOP-9EVPGCD" time="0.532">
   <properties/>
-  <testcase name="Determinant" classname="Matrix" time="0.522"/>
-  <testcase name="Transpose" classname="Matrix" time="0.015"/>
-  <testcase name="Inverse" classname="Matrix" time="0.01"/>
+  <testcase name="Determinant" classname="Matrix" time="0.5"/>
+  <testcase name="Transpose" classname="Matrix" time="0.014"/>
+  <testcase name="Inverse" classname="Matrix" time="0.009"/>
   <testcase name="Cofactor" classname="Matrix" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

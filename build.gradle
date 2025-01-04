@@ -1,6 +1,7 @@
 plugins {
   id 'groovy'
   id 'jacoco'
+  id("org.sonarqube") version "4.4.0.3356"
   id 'maven-publish'
 }
 
@@ -12,9 +13,19 @@ repositories {
 }
 
 dependencies {
-  testImplementation 'io.cucumber:cucumber-java:6.0.0'
-  testImplementation 'io.cucumber:cucumber-junit:6.0.0'
   testImplementation 'junit:junit:4.12'
   testImplementation 'junit:junit:4.13.1'
+  testImplementation 'io.cucumber:cucumber-java:6.0.0'
+
+  testImplementation 'io.cucumber:cucumber-junit:6.0.0'
 }
+
+
+
+
+
+
+
+
+
 
