@@ -5,24 +5,24 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Vous pouvez ajouter des commandes pour construire votre projet ici
-                sh 'echo "Building project..."'
+                // Simulate build process with a print statement
+                echo 'Build complete.'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Vous pouvez ajouter des commandes pour exécuter vos tests ici
-                sh 'echo "Running tests..."'
+                // Simulate running tests with a print statement
+                echo 'Tests complete.'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying the project...'
-                // Ajoutez ici des étapes pour déployer votre application
-                sh 'echo "Deploying project..."'
+                // Simulate deployment with a print statement
+                echo 'Deployment complete.'
             }
         }
     }
