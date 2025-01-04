@@ -6,7 +6,7 @@ pipeline {
         stage('Test') {
             steps {
             bat './gradlew test'
-            //archiveArtifacts 'build/test-results/'
+            archiveArtifacts 'build/test-results/'
                 echo 'Tests complete.'
             }
         }
