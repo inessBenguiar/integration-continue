@@ -9,7 +9,7 @@ pipeline {
 
                 cucumber(
                     reportTitle: 'My report',
-                    fileIncludePattern: 'target/cucumber.json',
+                    fileIncludePattern: 'build/reports/example-report.json',
                     trendsLimit: 10,
                     classifications: [
                         [
