@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-
         stage('Test') {
             steps {
-            bat './gradlew test'
-            archiveArtifacts 'build/test-results/'
-            cucumber //buildStatus: 'UNSTABLE',
+                bat './gradlew test'
+                archiveArtifacts 'build/test-results/'
+
+                cucumber(
                     reportTitle: 'My report',
                     fileIncludePattern: 'target/cucumber.json',
                     trendsLimit: 10,
@@ -17,9 +17,10 @@ pipeline {
                             'value': 'Firefox'
                         ]
                     ]
+                )
+
                 echo 'Tests complete.'
             }
         }
-
     }
 }
