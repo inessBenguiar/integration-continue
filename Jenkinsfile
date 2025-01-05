@@ -7,7 +7,7 @@ pipeline {
             steps {
             bat './gradlew test'
             archiveArtifacts 'build/test-results/'
-            // cucumber buildStatus: 'UNSTABLE',
+            cucumber //buildStatus: 'UNSTABLE',
                     reportTitle: 'My report',
                     fileIncludePattern: 'target/cucumber.json',
                     trendsLimit: 10,
