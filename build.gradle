@@ -19,6 +19,17 @@ dependencies {
   testImplementation 'io.cucumber:cucumber-junit:6.0.0'
 }
 
+sonarqube {
+  properties {
+    property "sonar.host.url", "http://197.140.142.82:9000"
+    property "sonar.projectKey", "sonnar"
+    property "sonar.projectName", "SonnarTest"
+    property "sonar.projectVersion", "1.0"
+    property "sonar.login", "eeb6e0f27b09b9144c665fe64b2741afc94668b6"
+  }
+}
+
+
 
 
 

@@ -22,5 +22,12 @@ pipeline {
                 echo 'Tests complete.'
             }
         }
+        stage('SonarQube Analysis') {
+                    steps {
+                        withSonarQubeEnv('SonarQube') {
+                            bat './gradlew sonarqube'
+                        }
+                    }
+                }
     }
 }
