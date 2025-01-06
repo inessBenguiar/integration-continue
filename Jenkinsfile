@@ -27,7 +27,11 @@ pipeline {
                         }
                     }
         }
-
+        stage('Code Quality') {
+                    steps {
+                        waitForQualityGate abortPipeline: true
+                    }
+        }
         stage("Build") {
               steps {
                   bat './gradlew.bat build'
