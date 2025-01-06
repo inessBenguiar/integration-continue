@@ -11,6 +11,7 @@ pipeline {
                     reportTitle: 'My report',
                     fileIncludePattern: 'reports/example-report.json',
                     trendsLimit: 10,
+
                     classifications: [
                         [
                             'key': 'Browser',
