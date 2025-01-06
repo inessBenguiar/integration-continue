@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2000300,
+              "duration": 2994400,
               "status": "passed"
             },
             "line": 3,
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-06T03:54:43.819Z",
+        "start_timestamp": "2025-01-06T04:15:17.509Z",
         "line": 5,
         "name": "Determinant",
         "description": "",
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2994000,
+              "duration": 1999900,
               "status": "passed"
             },
             "line": 6,
@@ -76,7 +76,7 @@
           },
           {
             "result": {
-              "duration": 1998400,
+              "duration": 1999900,
               "status": "passed"
             },
             "line": 11,
@@ -115,7 +115,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-06T03:54:43.908Z",
+        "start_timestamp": "2025-01-06T04:15:17.593Z",
         "line": 14,
         "name": "Transpose",
         "description": "",
@@ -162,7 +162,7 @@
           },
           {
             "result": {
-              "duration": 2852700,
+              "duration": 2001500,
               "status": "passed"
             },
             "line": 20,
@@ -218,7 +218,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-06T03:54:43.913Z",
+        "start_timestamp": "2025-01-06T04:15:17.598Z",
         "line": 26,
         "name": "Inverse",
         "description": "",
@@ -228,7 +228,6 @@
         "steps": [
           {
             "result": {
-              "duration": 999900,
               "status": "passed"
             },
             "line": 27,
@@ -312,7 +311,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-06T03:54:43.916Z",
+        "start_timestamp": "2025-01-06T04:15:17.601Z",
         "line": 37,
         "name": "Cofactor",
         "description": "",
@@ -322,7 +321,6 @@
         "steps": [
           {
             "result": {
-              "duration": 1001700,
               "status": "passed"
             },
             "line": 38,
