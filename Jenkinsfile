@@ -49,21 +49,21 @@ pipeline {
         }
         stage('Notify') {
             steps {
-                script {
-                    if (currentBuild.currentResult == 'SUCCESS') {
-                        slackSend(
-                            channel: '#integration-continue-jenkins',
-                            message: "✅ Build and deployment successful: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)",
-                            color: 'good'
-                        )
-                    } else {
-                        slackSend(
-                            channel: '#integration-continue-jenkins',
-                            message: "❌ Build or deployment failed: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)",
-                            color: 'danger'
-                        )
-                    }
-                }
+                slackSend(
+                    channel: '#integration-continue-jenkins',
+                    message: "Build and deployment successful: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                )
+            }
+        }
+    }
+
+    post {
+        failure {
+            steps {
+                slackSend(
+                    channel: '#integration-continue-jenkins',
+                    message: "Build or deployment failed: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                )
             }
         }
     }
