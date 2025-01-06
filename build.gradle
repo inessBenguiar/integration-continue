@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'com.example'
-version '1.0'
+version '1.0-SNAPSHOT'
 
 repositories {
   mavenCentral()
@@ -24,9 +24,8 @@ sonarqube {
     property "sonar.host.url", "http://197.140.142.82:9000"
     property "sonar.projectKey", "com.my-project:SonnarTest"
     property "sonar.projectName", "SonnarTest"
-    property "sonar.projectVersion", "1.0"
+    property "sonar.projectVersion", "1.0-SNAPSHOT"
     property "sonar.login", "042f8d65fbc81671439977b21a80533cd2a416ae"
-
   }
 }
 
