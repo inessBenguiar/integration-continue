@@ -5,7 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat './gradlew test'
-                archiveArtifacts 'build/test-results/'
+                archiveArtifacts artifacts: 'build/test-results/', allowEmptyArchive: true
                 cucumber(
                     reportTitle: 'My report',
                     fileIncludePattern: 'reports/example-report.json',
@@ -38,8 +38,8 @@ pipeline {
             steps {
                 bat './gradlew.bat build'
                 bat './gradlew.bat javadoc'
-                archiveArtifacts 'build/libs/*.jar'
-                archiveArtifacts 'build/docs/'
+                archiveArtifacts artifacts: 'build/libs/*.jar', allowEmptyArchive: true
+                archiveArtifacts artifacts: 'build/docs/', allowEmptyArchive: true
             }
         }
         stage('Deploy') {
@@ -49,10 +49,17 @@ pipeline {
         }
         stage('Notify') {
             steps {
-                slackSend(
-                    channel: '#integration-continue-jenkins',
-                    message: "Build and deployment successful: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-                )
+                script {
+                    slackSend(
+                        channel: '#integration-continue-jenkins',
+                        message: "Build and deployment successful: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                    )
+                    emailext(
+                        subject: currentBuild.result == 'SUCCESS' ? "SUCCESS: Application Deployed Successfully" : "FAILURE: Application Deployment Failed",
+                        body: currentBuild.result == 'SUCCESS' ? "The application was deployed successfully." : "The application deployment failed. Please check the Jenkins job for details.",
+                        to: 'is_benguiar@esi.dz'
+                    )
+                }
             }
         }
     }
