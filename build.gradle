@@ -25,7 +25,7 @@ sonarqube {
     property "sonar.projectKey", "com.my-project:SonnarTest"
     property "sonar.projectName", "SonnarTest"
     property "sonar.projectVersion", "1.0"
-    property "sonar.login", "042f8d65fbc81671439977b21a80533cd2a416ae"
+    property "sonar.login", "8a04959839ccbfc481f7f47f22e92934a78d6b3e"
   }
 }
 
