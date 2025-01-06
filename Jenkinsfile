@@ -55,8 +55,8 @@ pipeline {
                         message: "Build and deployment successful: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
                     )
                     emailext(
-                        subject: currentBuild.result == 'SUCCESS' ? "SUCCESS: Application Deployed Successfully" : "FAILURE: Application Deployment Failed",
-                        body: currentBuild.result == 'SUCCESS' ? "The application was deployed successfully." : "The application deployment failed. Please check the Jenkins job for details.",
+                        subject: "SUCCESS: Application Deployed Successfully" ,
+                        body: "The application was deployed successfully." ,
                         to: 'is_benguiar@esi.dz'
                     )
                 }
@@ -70,6 +70,11 @@ pipeline {
                 slackSend(
                     channel: '#integration-continue-jenkins',
                     message: "Build or deployment failed: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                )
+                emailext(
+                    subject: "FAILURE: Application did not Deploye" ,
+                    body: "The application was not deployed." ,
+                    to: 'is_benguiar@esi.dz'
                 )
             }
         }
