@@ -47,22 +47,24 @@ pipeline {
                   }
         }
         stage('Notification') {
-            post {
-                success {
-                    slackSend(
-                        channel: '#integration-continue-jenkins',
-                        message: "✅ Build and deployment successful",
-                        color: 'good'
-                    )
-                }
-                failure {
-                    slackSend(
-                        channel: '#integration-continue-jenkins',
-                        message: "❌ Build or deployment failed",
-                        color: 'danger'
-                    )
-                }
-            }
+             steps{
+                    post {
+                        success {
+                            slackSend(
+                                channel: '#integration-continue-jenkins',
+                                message: "✅ Build and deployment successful",
+                                color: 'good'
+                            )
+                        }
+                        failure {
+                            slackSend(
+                                channel: '#integration-continue-jenkins',
+                                message: "❌ Build or deployment failed",
+                                color: 'danger'
+                            )
+                        }
+                    }
+             }
         }
     }
 }
