@@ -21,50 +21,50 @@ pipeline {
             }
         }
         stage('Code Analysis') {
-                    steps {
-                         withSonarQubeEnv('sonar') {
-                            bat './gradlew sonarqube'
-                        }
+            steps {
+                withSonarQubeEnv('sonar') {
+                    bat './gradlew sonarqube'
+                }
+            }
+        }
+        /*
+        stage('Code Quality') {
+            steps {
+                waitForQualityGate abortPipeline: true
+            }
+        }
+        */
+        stage('Build') {
+            steps {
+                bat './gradlew.bat build'
+                bat './gradlew.bat javadoc'
+                archiveArtifacts 'build/libs/*.jar'
+                archiveArtifacts 'build/docs/'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                bat './gradlew.bat publish'
+            }
+        }
+        stage('Notify') {
+            steps {
+                script {
+                    if (currentBuild.currentResult == 'SUCCESS') {
+                        slackSend(
+                            channel: '#integration-continue-jenkins',
+                            message: "✅ Build and deployment successful: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)",
+                            color: 'good'
+                        )
+                    } else {
+                        slackSend(
+                            channel: '#integration-continue-jenkins',
+                            message: "❌ Build or deployment failed: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)",
+                            color: 'danger'
+                        )
                     }
-        }
-//        stage('Code Quality') {
-//                    steps {
- //                       waitForQualityGate abortPipeline: true
-  //                  }
-        stage("Build") {
-              steps {
-                  bat './gradlew.bat build'
-                  bat './gradlew.bat javadoc'
-                  archiveArtifacts 'build/libs/*.jar'
-                  archiveArtifacts 'build/docs/'
-
-              }
-        }
-        stage("deploy") {
-                  steps {
-                      bat './gradlew.bat publish'
-
-                  }
-        }
-        stage('Notification') {
-             steps{
-                    post {
-                        success {
-                            slackSend(
-                                channel: '#integration-continue-jenkins',
-                                message: "✅ Build and deployment successful",
-                                color: 'good'
-                            )
-                        }
-                        failure {
-                            slackSend(
-                                channel: '#integration-continue-jenkins',
-                                message: "❌ Build or deployment failed",
-                                color: 'danger'
-                            )
-                        }
-                    }
-             }
+                }
+            }
         }
     }
 }
