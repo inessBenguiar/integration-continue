@@ -6,7 +6,6 @@ pipeline {
             steps {
                 bat './gradlew test'
                 archiveArtifacts 'build/test-results/'
-
                 cucumber(
                     reportTitle: 'My report',
                     fileIncludePattern: 'reports/example-report.json',
@@ -19,7 +18,6 @@ pipeline {
                     ]
                 )
                 junit 'build/test-results/test/TEST-Matrix.xml'
-                echo 'Tests complete.'
             }
         }
         stage('Code Analysis') {
@@ -28,6 +26,11 @@ pipeline {
                             bat './gradlew sonarqube'
                         }
                     }
-                }
+        }
+        stage('Quality Gate') {
+                    steps {
+                        waitForQualityGate abortPipeline: true
+                    }
+        }
     }
 }
