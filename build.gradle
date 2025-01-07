@@ -56,3 +56,31 @@ jacocoTestReport {
 
 
 
+repositories {
+  maven {
+    url "https://mymavenrepo.com/repo/OicFqjk9VQHWOORIIncj/"
+    credentials {
+      username = 'myMavenRepo'
+      password = '123456'
+    }
+  }
+}
+
+publishing {
+  repositories {
+    maven {
+      url "https://mymavenrepo.com/repo/OicFqjk9VQHWOORIIncj/"
+      credentials {
+        username = 'myMavenRepo'
+        password = '123456'
+      }
+
+    }
+  }
+
+  publications {
+    maven(MavenPublication) {
+      from components.java
+    }
+  }
+}
