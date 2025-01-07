@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33cda9ca-5bfb-4ef7-abdb-f6bc5f9e05d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/jacoco/test.exec" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacoco/test.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/Matrix.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/Matrix.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/sonar/report-task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/sonar/report-task.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-Matrix.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-Matrix.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/example-report.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/example-report.json" afterDir="false" />
-    </list>
+    <list default="true" id="33cda9ca-5bfb-4ef7-abdb-f6bc5f9e05d6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
