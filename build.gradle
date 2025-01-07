@@ -27,7 +27,7 @@ sonarqube {
     property "sonar.projectVersion", "1.0"
     property "sonar.sources", "src/main/java"
     property "sonar.tests", "src/test/java"
-    property "sonar.login", "8a04959839ccbfc481f7f47f22e92934a78d6b3e"
+    property "sonar.login", "01e304d4c55441e7e1dd24372f897e14a0e96b75"
     property "sonar.java.binaries", "build/classes/java/main"
     property "sonar.junit.reportPaths", "build/test-results/test"
     property "sonar.jacoco.reportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
@@ -50,6 +50,7 @@ jacocoTestReport {
   reports {
     xml.required = true
     html.required = true
+
   }
 }
 
