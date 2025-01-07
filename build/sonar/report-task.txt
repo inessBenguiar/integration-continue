@@ -2,5 +2,5 @@ projectKey=com.my-project:SonnarTest
 serverUrl=http://197.140.142.82:9000
 serverVersion=7.4.0.18908
 dashboardUrl=http://197.140.142.82:9000/dashboard?id=com.my-project%3ASonnarTest
-ceTaskId=AZQ9BUUbzrkz5NLy0BNW
-ceTaskUrl=http://197.140.142.82:9000/api/ce/task?id=AZQ9BUUbzrkz5NLy0BNW
+ceTaskId=AZRAltphzrkz5NLy0BRi
+ceTaskUrl=http://197.140.142.82:9000/api/ce/task?id=AZRAltphzrkz5NLy0BRi
