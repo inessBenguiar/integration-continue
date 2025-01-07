@@ -76,6 +76,7 @@ pipeline {
                     body: "The application was not deployed." ,
                     to: 'is_benguiar@esi.dz'
 
+
                 )
             }
         }
