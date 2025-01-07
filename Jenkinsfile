@@ -64,6 +64,7 @@ pipeline {
         }
     }
 
+
     post {
         failure {
             steps {
@@ -75,7 +76,6 @@ pipeline {
                     subject: "FAILURE: Application did not Deploye" ,
                     body: "The application was not deployed." ,
                     to: 'is_benguiar@esi.dz'
-
                 )
             }
         }
