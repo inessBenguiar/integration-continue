@@ -44,7 +44,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat './gradlew.bat publish'
+
+                withCredentials([usernamePassword(credentialsId: 'publish', usernameVariable: 'ines', passwordVariable: 'ines')]) {
+
+                bat './gradlew publish'}
             }
         }
         stage('Notify') {
